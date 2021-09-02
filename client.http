@@ -1,0 +1,85 @@
+# get all items
+GET http://localhost:8000/api/items/
+
+###
+
+# get an item
+GET http://localhost:8000/api/items/1/
+
+###
+
+# create a new item
+POST http://localhost:8000/items/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYzMDY4MjQxMH0.JiaeJqa5yYeC6SUhZ7XBdtm_4TRTl9QCg22qX_OUBXI
+
+{
+  "name": "test 3",
+  "type": "food",
+  "diet": "herbivore",
+  "size": "large",
+  "description": "test",
+  "price": "9.99",
+  "image": "image.jpg"
+}
+
+###
+
+# delete an item
+DELETE http://localhost:8000/items/3/
+
+### update an item
+PUT http://localhost:8000/items/4/
+Content-Type: application/json
+
+{
+  "name": "test 2",
+  "type": "toy",
+  "diet": "herbivore",
+  "size": "large",
+  "description": "this has been updated",
+  "price": 0.0,
+  "image": "image.jpg"
+}
+
+###
+
+#create a comment
+POST http://localhost:8000/items/1/comments/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYzMDY4MjQxMH0.JiaeJqa5yYeC6SUhZ7XBdtm_4TRTl9QCg22qX_OUBXI
+
+{
+  "content": "My first django comment."
+}
+
+###
+
+# delete a comment
+
+DELETE http://localhost:8000/items/4/comments/2/
+
+###
+
+# register a user
+POST http://localhost:8000/api/auth/register/
+Content-Type: application/json
+
+{
+  "password": "theopass",
+  "passwordConfirmation": "theopass",
+  "username": "theo3",
+  "email": "theo@email.com",
+  "profileImage": "image.jpg"
+}
+
+###
+
+# login a user
+POST http://localhost:8000/api/auth/login/
+Content-Type: application/json
+
+{
+  "email": "theo@email.com",
+  "password": "theopass"
+}
