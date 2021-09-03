@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_on_heroku
+
 import os
 from pathlib import Path
+import django_on_heroku
 from dotenv import load_dotenv
 import dj_database_url
 load_dotenv()
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if str(os.getenv('ENVIRONMENT')) == 'development':
-    SECRET_KEY = 'django-insecure-&+k5tb*6vwsbm2rmdc3rv_+f8oni_qvshsq^ga&o60vp9ltn24' # should be whatever your original key was
+    SECRET_KEY = 'django-insecure-&+k5tb*6vwsbm2rmdc3rv_+f8oni_qvshsq^ga&o60vp9ltn24'
 else:
     SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
