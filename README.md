@@ -157,7 +157,7 @@ class Misc(models.Model):
 
 <p>I then used Django Admin to quickly add some data sets.</p>
 
-<p><strong>Update:</strong>Whilst building the frontend I discovered having two separate models created more problems than it solved - particularly when it came to combining selected data sets in the 'basket' page. To fix this and streamline the backend functionality in general, I removed the existing user models and created a single 'items' model that combined classes from the 'dinosaur' and 'misc' models.</p>
+<p><strong>Update:</strong> Whilst building the frontend I discovered having two separate models created more problems than it solved - particularly when it came to combining selected data sets in the 'basket' page. To fix this and streamline the backend functionality in general, I removed the existing user models and created a single 'items' model that combined classes from the 'dinosaur' and 'misc' models.</p>
 
 ```
 class Item(models.Model):
@@ -246,7 +246,7 @@ class LoginView(APIView):
 
 <img src="https://i.imgur.com/6QsUY2I.png" alt="DPS Home"/>
 
-<p><strong>Update:</strong>Upon a successful login, the users navbar now changes to reveal a 'post your dinosaur' option, and replaces the 'login/register' options with a 'log out' variant.</p>
+<p><strong>Update:</strong> Upon a successful login, the users navbar now changes to reveal a 'post your dinosaur' option, and replaces the 'login/register' options with a 'log out' variant.</p>
 
 ```
 {!isLoggedIn ?
@@ -300,7 +300,7 @@ const [basketItems, setBasketItems] = React.useState(() => JSON.parse(window.loc
 
 <p>From here I added a ‘Total’ counter that displayed the combined items price, and a ‘Remove Item’ button that would affect the counter in return. I installed ‘Material-UI’ and used their button components to create a basic ‘checkout’ button.</p>
 
-<p><strong>Update:</strong>I later applied 'Material-UI' to the show page - when the 'add to basket' button is clicked, the user is notified of the said item being added, instead of being pushed to the home page.</p>
+<p><strong>Update:</strong> I later applied 'Material-UI' to the show page - when the 'add to basket' button is clicked, the user is notified of the said item being added, instead of being pushed to the home page.</p>
 
 ```
 const totalDinoPrice = basketItems.reduce((runningTotal, item) => {
@@ -331,13 +331,15 @@ const handleDelete = (e) => {
 
 <p>There being two arrays, two counters and remove buttons were made - the deadline on the horizon, I’ve opted to come back to the resulting bugs later on, either to spread and combine the two arrays or refactor my code entirely.</p>
 
-<p><strong>Update:</strong>The backend refactoring meant this process could now be simplified. Instead of handling two arrays, there is only one basket array to map and filter, thus only one handleDelete function needed.</p>
+<p><strong>Update:</strong> The backend refactoring meant this process could now be simplified. Instead of handling two arrays, there is only one basket array to map and filter, thus only one handleDelete function needed.</p>
 
 <img src="https://i.imgur.com/ywp71ZZ.png" alt="Basket page"/>
 
 <h2>Wins</h2>
 
 <p>Basket: In project 2 my team and I tried to create a similar feature that we didn't quite figure out how to implement in time, so it felt quite satisfying to succeed in a solo venture this time around.</p>
+
+<p>Refactoring: The deadline having passed, I wasn't satisfied with the end result. It's felt very rewarding to come back to this project and refactor and refine certain elements, and I'm looking to tinker with it further.</p>
 
 <h2>Challenges</h2>
 
